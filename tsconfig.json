@@ -2,6 +2,26 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "backtotopbutton": [
+        "./dist/backtotopbutton"
+      ],
+      "footer": [
+        "./dist/footer"
+      ],
+      "header": [
+        "./dist/header"
+      ],
+      "homepage": [
+        "./dist/homepage"
+      ],
+      "sitecontactform": [
+        "./dist/sitecontactform"
+      ],
+      "sitejobapplication": [
+        "./dist/sitejobapplication"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
