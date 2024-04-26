@@ -1,0 +1,33 @@
+.btn.btn-lg-square{
+    background-color: #FFF;
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    display: inline-block;
+    z-index: 999;
+    background: #fff;
+    font-size: 15px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    box-shadow: 1px 0 22px -9px rgba(0,0,0,.4);
+    transition: all .3s cubic-bezier(.61,-.12,.08,1.55);
+    cursor: pointer;
+    color: #FF4D00;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    mat-icon{
+        font-size: 20px;
+        vertical-align: middle;
+    }
+    &:hover,
+    &:focus,
+    &:active
+    {
+        border-color: transparent;
+    }
+
+}
