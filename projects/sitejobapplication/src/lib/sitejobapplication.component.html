@@ -1,0 +1,49 @@
+<form [formGroup]="jobForm" (ngSubmit)="submit()">
+    <div class="text-dark f-16">
+      <p>Apply for this position</p>
+      <!-- <span>Our team of experts is ready to help you.</span>
+      <hr> -->
+      <div>
+        <label for="first-name">Full Name 
+            <span class="text-danger">*</span>
+        </label>
+        <input [ngClass]="{'error-border': formErrors['firstnameError']}" type="text" id="first-name" formControlName="firstname" placeholder="your name here">
+        <span *ngIf="formErrors['firstnameError']" class="text-white errormsg">This field is required</span>
+      </div>
+  
+      <div>
+        <label for="email">Email <span class="text-danger">*</span></label>
+        <input [ngClass]="{'error-border': formErrors['userEmailRequiredError'] || formErrors['userEmailValidError']}" type="email" id="email" formControlName="useremail">
+        <span *ngIf="formErrors['userEmailRequiredError']" class="text-white errormsg">This field is required</span>
+        <span *ngIf="formErrors['userEmailValidError']" class="text-white errormsg">Valid Email is required</span>
+      </div>
+
+      <!-- Inside your HTML template -->
+      <div>
+        <label for="mobile-number">Mobile Number <span class="text-danger">*</span></label>
+        <input [ngClass]="{'error-border': formErrors['mobilenumberRequiredError'] || formErrors['mobilenumberValidError']}" type="tel" id="mobile-number" formControlName="mobilenumber" placeholder="your mobile number here">
+        <span *ngIf="formErrors['mobilenumberRequiredError']" class="text-white errormsg">This field is required</span>
+        <span *ngIf="formErrors['mobilenumberValidError']" class="text-white errormsg">Valid Mobile number is required</span>
+      </div>
+  
+      <div>
+        <label for="message">Cover Letter <span class="text-danger">*</span></label>
+        <textarea [ngClass]="{'error-border': formErrors['messagetextError']}" id="message" formControlName="messagetext" rows="10" cols="80"></textarea>
+        <span *ngIf="formErrors['messagetextError']" class="text-white errormsg">This field is required</span>
+      </div>
+
+      <div>
+        <label for="resume">Upload CV/Resume <span class="text-danger">*</span></label>
+        <input [ngClass]="{'error-border': formErrors['resumerequiredError'] || formErrors['resumeValidError']}" type="file" id="resume" formControlName="resume" accept=".pdf, .doc, .docx">
+        <br/><span>Allowed Type(s): .pdf, .doc, .docx</span>
+        <span *ngIf="formErrors['resumerequiredError']" class="text-white errormsg">This field is required</span>
+        <span *ngIf="formErrors['resumeValidError']" class="text-white errormsg">Please upload a valid .pdf, .doc, .docx file</span>
+        <!-- <span *ngIf="formErrors['resumeError']" class="text-white errormsg">Please upload a valid .pdf, .doc, .docx file</span> -->
+     </div>
+  
+      <button class="msgbutton" type="submit">Submit</button>
+      <div *ngIf="validmsg">
+        <span class="text-white successmsg">Message Sent successfully</span>
+      </div>
+    </div>
+  </form>
